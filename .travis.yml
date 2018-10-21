@@ -1,4 +1,11 @@
-language: cpp
+language:
+  - cpp
+  - python
+
+python:
+  - "3.6"
+  - "3.7-dev"
+
 compiler:
   - gcc
 
@@ -13,7 +20,12 @@ install:
   # C++17
   - sudo apt-get install -qq g++-6
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
+  - sudo -H pip install --ignore-installed six
+  - sudo pip install -r requirements.txt
+  - sudo pip install -U pytest
+
 
 script: 
   - g++ main.cpp -std=c++17 -o travis_gcc_cpp17
   # - ./travis_gcc_cpp17
+  - pytest
