@@ -20,9 +20,9 @@ install:
   # C++17
   # - sudo apt-get install -qq g++-6
   # - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
-  - sudo pip install --upgrade pip
+  - sudo -H pip install --ignore-installed six
   - sudo pip install -r requirements.txt
-  - sudo pip install pytest
+  - sudo pip install -U pytest
 
 
 script: 
