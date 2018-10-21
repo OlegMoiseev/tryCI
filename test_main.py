@@ -8,4 +8,4 @@ def test_add():
 
 
 def test_get_zero_matrix():
-	assert(main.get_zero_matrix(3) == np.array([[0, 0, 0], [0, 0, 0], [0, 0, 0]]))
+	assert(np.array_equal(main.get_zero_matrix(3), np.array([[0, 0, 0], [0, 0, 0], [0, 0, 0]]))
